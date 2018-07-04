@@ -141,16 +141,22 @@ When the `--template` flag is not supplied, and neither [`--demo`](#--demo) nor 
 
 ### `--tree`
 
-To use a specific version of Embark (and templates pegged to that version), indicate a [tree-ish](https://git-scm.com/docs/gitglossary#gitglossary-aiddeftree-ishatree-ishalsotreeish) that's valid with respect to the [Embark repository](https://github.com/embark-framework/embark).
+To use a specific revision of the Embark codebase (and so a template as found in that revision), indicate a [tree-ish](https://git-scm.com/docs/gitglossary#gitglossary-aiddeftree-ishatree-ishalsotreeish) that's valid with respect to the [Embark repository](https://github.com/embark-framework/embark).
 
 ```shell
 create-embark-dapp my-dapp \
                    --template demo \
                    --tree some-feature-branch
 ```
+
+When the `--tree` flag is not used, templates will be extracted from the most recent version of the Embark package as can be determined with `npm show embark version`.
+
+**Note:** &nbsp; it is *incorrect* to use this flag without supplying a value, as it assumes no default value.
+
+The `--tree` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags.
+
 ```
 
-The `--tree` flag may be used with or without the `--template` flag, and may be used in conjunction with [`--demo`](#--demo) or [`--simple`](#--simple).
 
 ## Acknowledgements
 
