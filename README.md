@@ -17,7 +17,7 @@ cd my-dapp/
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view your running DApp.
+Open [http://localhost:8000](http://localhost:8000) to view your running DApp.
 <!--
 <img width="600" alt="Create Embark DApp running in terminal" src="https://cloud.githubusercontent.com/assets/1026125/25556236/0ac91ca6-2cae-11e7-87ae-bb7974285063.png" />
 
@@ -117,7 +117,7 @@ Once the installation is finished, you can run some commands in your project:
 #### `npm run dev`
 
 Runs the DApp in development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 #### `npm run embark <cmd>`
 
