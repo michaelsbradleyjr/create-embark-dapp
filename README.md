@@ -150,7 +150,7 @@ create-embark-dapp --tree 3.1.2 --template demo my-dapp
 cd my-dapp
 ```
 
-The `--tree` flag may be used with or without the `--template` flag, and may be used in conjunction with the [`--demo`](#--demo) and [`--simple`](#--simple) flags.
+The `--tree` flag may be used with or without the `--template` flag, and may be used in conjunction with [`--demo`](#--demo) or [`--simple`](#--simple).
 
 ## Acknowledgements
 
