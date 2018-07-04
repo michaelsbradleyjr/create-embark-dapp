@@ -18,11 +18,11 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view your running DApp.
-
+<!--
 <img width="600" alt="Create Embark DApp running in terminal" src="https://cloud.githubusercontent.com/assets/1026125/25556236/0ac91ca6-2cae-11e7-87ae-bb7974285063.png" />
 
 <img width="600" alt="Create Embark DApp running in terminal" src="https://cloud.githubusercontent.com/assets/1026125/25556240/111fc3b6-2cae-11e7-84b6-961de4fd27f9.png" />
-
+-->
 ### Start Coding Now
 
 You **don't** have to install anything else &mdash; you can just start coding.
