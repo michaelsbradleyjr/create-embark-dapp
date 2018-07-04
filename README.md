@@ -168,11 +168,11 @@ create-embark-dapp my-dapp \
 
 **Note:** &nbsp; it is *incorrect* to use this flag without supplying a value, as it assumes no default value.
 
-The `--embark-version` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags except `--embark-version-as-tree`.
+The `--embark-version` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags except `--embark-version-from-tree`.
 
-### `--embark-version-as-tree`
+### `--embark-version-from-tree`
 
-Use the `--embark-version-as-tree` flag to have the `--embark-version` flag automatically derive its value from the `--tree` flag's value.
+Use the `--embark-version-from-tree` flag to have the `--embark-version` flag automatically derive its value from the `--tree` flag's value.
 
 The following are equivalent:
 
@@ -180,7 +180,7 @@ The following are equivalent:
 create-embark-dapp my-dapp \
                    --template demo \
                    --tree some-feature-branch \
-                   --embark-version-as-tree
+                   --embark-version-from-tree
 ```
 ``` shell
 create-embark-dapp my-dapp \
@@ -189,9 +189,9 @@ create-embark-dapp my-dapp \
                    --embark-version 'embark-framework/embark#some-feature-branch'
 ```
 
-**Note:** &nbsp; it is *incorrect* to supply a value for this flag. Likewise, it is incorrect to specify both `--embark-version` and `--embark-version-as-tree`.
+**Note:** &nbsp; it is *incorrect* to supply a value for this flag. Likewise, it is incorrect to specify both `--embark-version` and `--embark-version-from-tree`.
 
-The `--embark-version-as-tree` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags except `--embark-version`.
+The `--embark-version-from-tree` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags except `--embark-version`.
 
 ## Acknowledgements
 
