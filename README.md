@@ -119,12 +119,27 @@ Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 #### `npm run embark <cmd>`
 
-Invoke [Embark commands](https://embark.status.im/docs/embark_commands.html).<br>
-For example `npm run dev` could instead be `npm run embark run`.
+Invoke [Embark commands](https://embark.status.im/docs/embark_commands.html). For example:
+
+``` shell
+npm run embark build
+```
+
+:tada: &nbsp; Add a command alias to your shell to cut down on typing `npm run embark`.
+
+If you're using `bash`, you could add the following to `~/.bashrc` and/or execute it at a `bash` prompt.
+
+``` shell
+alias embark='npm run embark'
+```
+
+Inside a DApp project directory `embark build` would then be equivalent to `npm run embark build`.
 
 ## Starting from Templates
 
 There are templates in the [Embark repo](https://github.com/embark-framework/embark/tree/develop/templates/) (the list will be growing!) that you can use to bootstrap your DApp.
+
+### `--template`
 
 To use a template:
 
@@ -139,59 +154,50 @@ When the `--template` flag is not supplied, and neither [`--demo`](#--demo) nor 
 
 **Note:** &nbsp; it is *incorrect* to use the `--template` flag while *also* specifying `--demo` and/or `--simple`. Likewise, it is incorrect to specify both `--demo` and `--simple`.
 
-### `--tree`
+### `--template-source`
 
-To use a specific revision of the Embark codebase (and so a template as found in that revision), indicate a [tree-ish](https://git-scm.com/docs/gitglossary#gitglossary-aiddeftree-ishatree-ishalsotreeish) that's valid with respect to the [Embark repository](https://github.com/embark-framework/embark).
+To use a specific source for the template code, indicate a [tree-ish](https://git-scm.com/docs/gitglossary#gitglossary-aiddeftree-ishatree-ishalsotreeish) that's valid with respect to the [Embark repository](https://github.com/embark-framework/embark).
 
 ```shell
 create-embark-dapp my-dapp \
-                   --template demo \
-                   --tree some-feature-branch
+                   --template-source some-feature-branch
 ```
 
-When the `--tree` flag is not used, templates will be extracted from the most recent version of the Embark package as can be determined with `npm show embark version`.
+Alternatively, an `http/https` URL may be supplied which points to a `.tar.gz` asset. So if a user `ghuser` has forked Embark and has a branch named `new-feature`, the following could be run:
 
-**Note:** &nbsp; it is *incorrect* to use this flag without supplying a value, as it assumes no default value.
+```shell
+create-embark-dapp my-dapp \
+                   --template-source 'https://codeload.github.com/ghuser/embark/tar.gz/new-feature'
+```
 
-The `--tree` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags.
+The only expectation is that the extracted files will have the following directory structure:
+
+```
+.
+  templates/
+    <template-name>/
+```
+
+When the `--template-source` flag is not used, templates will be extracted from the most recent version of the Embark package as can be determined with `npm show embark version`.
+
+**Note:** &nbsp; it is *incorrect* to use this flag without supplying a value.
+
+The `--template-source` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags.
 
 ### `--embark-version`
 
-To override the version of Embark specified in a template's `package.json`, indicate a [dependency value](https://docs.npmjs.com/files/package.json#dependencies) (version number or range, URL, path, etc.) that's valid for Embark.
+To override the version of Embark specified as a dependency in a template's `package.json`, indicate any valid [dependency value](https://docs.npmjs.com/files/package.json#dependencies) (version number or range, URL, path, etc.).
 
 ```shell
 create-embark-dapp my-dapp \
                    --template showcase-xyz \
-                   --tree new-templates-wip
+                   --template-source new-templates-wip
                    --embark-version 3.1.4
 ```
 
-**Note:** &nbsp; it is *incorrect* to use this flag without supplying a value, as it assumes no default value.
+**Note:** &nbsp; it is *incorrect* to use this flag without supplying a value.
 
-The `--embark-version` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags except `--embark-version-from-tree`.
-
-### `--embark-version-from-tree`
-
-Use the `--embark-version-from-tree` flag to have the `--embark-version` flag automatically derive its value from the `--tree` flag's value.
-
-The following are equivalent:
-
-``` shell
-create-embark-dapp my-dapp \
-                   --template demo \
-                   --tree some-feature-branch \
-                   --embark-version-from-tree
-```
-``` shell
-create-embark-dapp my-dapp \
-                   --template demo
-                   --tree some-feature-branch \
-                   --embark-version 'embark-framework/embark#some-feature-branch'
-```
-
-**Note:** &nbsp; it is *incorrect* to supply a value for this flag. Likewise, it is incorrect to specify both `--embark-version` and `--embark-version-from-tree`.
-
-The `--embark-version-from-tree` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags except `--embark-version`.
+The `--embark-version` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags.
 
 ## Acknowledgements
 
