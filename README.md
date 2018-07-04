@@ -9,7 +9,7 @@ If you run into any issues or have feedback, please [file an issue](https://gith
 
 ## Overview
 
-```sh
+```shell
 npm install -g create-embark-dapp
 
 create-embark-dapp my-dapp
@@ -35,7 +35,7 @@ After running `create-embark-dapp`, you're good to go!
 
 Install it once globally:
 
-```sh
+```shell
 npm install -g create-embark-dapp
 ```
 
@@ -45,7 +45,7 @@ npm install -g create-embark-dapp
 
 To create a new DApp, run:
 
-```
+```shell
 create-embark-dapp my-dapp
 cd my-dapp
 ```
@@ -90,9 +90,8 @@ Out of the box, we get:
 
 To create a demo Embark project with examples for working with contracts, IPFS, and Whisper, run:
 
-```
-create-embark-dapp --demo my-dapp
-cd my-dapp
+```shell
+create-embark-dapp my-dapp --demo
 ```
 
 The `--demo` flag is an alias for `--template demo`.<br>
@@ -102,9 +101,8 @@ See [Starting from Templates](#starting-from-templates).
 
 To create a barebones project meant only for contract development, run:
 
-```
-create-embark-dapp --simple my-dapp
-cd my-dapp
+```shell
+create-embark-dapp my-dapp --simple
 ```
 
 The `--simple` flag is an alias for `--template simple`.<br>
@@ -131,8 +129,8 @@ There are templates in the [Embark repo](https://github.com/embark-framework/emb
 To use a template:
 
 1.  Go to https://embark.status.im/create-embark-dapp#templates
-2.  Search for a template you want and get it's name (looks like `basic-contracts`)
-3.  Run: `create-embark-dapp --template basic-contracts another-dapp`
+2.  Search for a template you want and get its name (looks like `basic-contracts`)
+3.  Run: `create-embark-dapp another-dapp --template basic-contracts`
 4.  Done 💥
 
 ### `boilerplate`
@@ -145,9 +143,11 @@ Note: &nbsp; it is *incorrect* to use the `--template` flag while *also* specify
 
 To use a specific version of Embark (and templates pegged to that version), indicate a [tree-ish](https://git-scm.com/docs/gitglossary#gitglossary-aiddeftree-ishatree-ishalsotreeish) that's valid with respect to the [Embark repository](https://github.com/embark-framework/embark).
 
+```shell
+create-embark-dapp my-dapp \
+                   --template demo \
+                   --tree some-feature-branch
 ```
-create-embark-dapp --tree 3.1.2 --template demo my-dapp
-cd my-dapp
 ```
 
 The `--tree` flag may be used with or without the `--template` flag, and may be used in conjunction with [`--demo`](#--demo) or [`--simple`](#--simple).
