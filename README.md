@@ -81,10 +81,12 @@ my-dapp
     contract_spec.js
 ```
 
-Out of the box, we get:
+#### Out of the box, we get: :heart:
 
-- great stuff
-- and other cool stuff too
+- automatic contract re/builds and re/deployments
+- simple blockchain and contract management
+- easy access to decentralized storage and communication
+- integration with the any web technologies and build pipelines your prefer
 
 #### `--demo`
 
