@@ -132,7 +132,7 @@ To use a template:
 
 1.  Go to https://embark.status.im/create-embark-dapp#templates
 2.  Search for a template you want and get it's name (looks like `basic-contracts`)
-3.  Run: `create-embark-dapp --template basic-contracts my-other-dapp`
+3.  Run: `create-embark-dapp --template basic-contracts another-dapp`
 4.  Done 💥
 
 ### `boilerplate`
