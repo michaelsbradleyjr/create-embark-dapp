@@ -86,7 +86,7 @@ my-dapp
 - automatic contract re/builds and re/deployments
 - simple blockchain and contract management
 - easy access to decentralized storage and communication
-- integration with the any web technologies and build pipelines your prefer
+- integration with any web technologies and build pipelines your prefer
 
 #### `--demo`
 
