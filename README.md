@@ -155,8 +155,43 @@ When the `--tree` flag is not used, templates will be extracted from the most re
 
 The `--tree` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags.
 
+### `--embark-version`
+
+To override the version of Embark specified in a template's `package.json`, indicate a [dependency value](https://docs.npmjs.com/files/package.json#dependencies) (version number or range, URL, path, etc.) that's valid for Embark.
+
+```shell
+create-embark-dapp my-dapp \
+                   --template showcase-xyz \
+                   --tree new-templates-wip
+                   --embark-version 3.1.4
 ```
 
+**Note:** &nbsp; it is *incorrect* to use this flag without supplying a value, as it assumes no default value.
+
+The `--embark-version` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags except `--embark-version-as-tree`.
+
+### `--embark-version-as-tree`
+
+Use the `--embark-version-as-tree` flag to have the `--embark-version` flag automatically derive its value from the `--tree` flag's value.
+
+The following are equivalent:
+
+``` shell
+create-embark-dapp my-dapp \
+                   --template demo \
+                   --tree some-feature-branch \
+                   --embark-version-as-tree
+```
+``` shell
+create-embark-dapp my-dapp \
+                   --template demo
+                   --tree some-feature-branch \
+                   --embark-version 'embark-framework/embark#some-feature-branch'
+```
+
+**Note:** &nbsp; it is *incorrect* to supply a value for this flag. Likewise, it is incorrect to specify both `--embark-version` and `--embark-version-as-tree`.
+
+The `--embark-version-as-tree` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags except `--embark-version`.
 
 ## Acknowledgements
 
