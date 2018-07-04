@@ -125,7 +125,7 @@ Invoke [Embark commands](https://embark.status.im/docs/embark_commands.html). Fo
 npm run embark build
 ```
 
-:tada: &nbsp; Add a command alias to your shell to cut down on typing `npm run embark`.
+:tada:&nbsp; Add a command alias to your shell to cut down on typing `npm run embark`.
 
 If you're using `bash`, you could add the following to `~/.bashrc` and/or execute it at a `bash` prompt.
 
