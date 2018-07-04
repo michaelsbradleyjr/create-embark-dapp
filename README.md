@@ -139,6 +139,8 @@ To use a template:
 
 When the `--template` flag is not supplied, and neither [`--demo`](#--demo) nor [`--simple`](#--simple) is used, it's equivalent to indicating `--template boilerplate`.
 
+Note: &nbsp; it is *incorrect* to use the `--template` flag while *also* specifying `--demo` and/or `--simple`. Likewise, it is incorrect to specify both `--demo` and `--simple`.
+
 ### `--tree`
 
 To use a specific version of Embark (and templates pegged to that version), indicate a [tree-ish](https://git-scm.com/docs/gitglossary#gitglossary-aiddeftree-ishatree-ishalsotreeish) that's valid with respect to the [Embark repository](https://github.com/embark-framework/embark).
