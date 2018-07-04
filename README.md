@@ -5,7 +5,7 @@ The easiest way to create Ethereum [DApps](https://en.wikipedia.org/wiki/Decentr
 - [Getting Started](#getting-started) — How to create a DApp
 - [Starting from Examples](#starting-from-templates) — How to create a DApp from an Embark template
 
-If you run into any issues or have feedback, please [file an issue](https://github.com/segmentio/create-next-app/issues/new)
+If you run into any issues or have feedback, please [file an issue](https://github.com/segmentio/create-next-app/issues/new).
 
 ## Overview
 
