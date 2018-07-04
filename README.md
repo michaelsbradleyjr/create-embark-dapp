@@ -137,7 +137,7 @@ To use a template:
 
 When the `--template` flag is not supplied, and neither [`--demo`](#--demo) nor [`--simple`](#--simple) is used, it's equivalent to indicating `--template boilerplate`.
 
-Note: &nbsp; it is *incorrect* to use the `--template` flag while *also* specifying `--demo` and/or `--simple`. Likewise, it is incorrect to specify both `--demo` and `--simple`.
+**Note:** &nbsp; it is *incorrect* to use the `--template` flag while *also* specifying `--demo` and/or `--simple`. Likewise, it is incorrect to specify both `--demo` and `--simple`.
 
 ### `--tree`
 
