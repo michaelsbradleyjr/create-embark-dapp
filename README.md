@@ -152,19 +152,19 @@ To use a template:
 
 ### `boilerplate`
 
-When the `--template` flag is not supplied, and neither [`--demo`](#--demo) nor [`--simple`](#--simple) is used, it's equivalent to indicating `--template boilerplate`.
+When the `--template` flag is not used or no value is supplied, and neither [`--demo`](#--demo) nor [`--simple`](#--simple) is used, it's equivalent to indicating `--template boilerplate`.
 
-**Note:** &nbsp; it is *incorrect* to use the `--template` flag while *also* specifying `--demo` and/or `--simple`. Likewise, it is incorrect to specify both `--demo` and `--simple`.
+**Note:** &nbsp; it is *incorrect* to use the `--template` flag while *also* using `--demo` and/or `--simple`. Likewise, it is incorrect to use both `--demo` and `--simple`.
 
 ### `--template-source`
 
 To use a specific source for the template code, any npm [package specifier](https://docs.npmjs.com/cli/install#description) (URL, folder, gzipped tarball, etc.) may be supplied to the `--template-source` flag.
 
-So if a user `ghuser` has forked Embark and has a branch named `new-feature`, the following could be run:
+So if a user `ghuser` has forked Embark and has a branch named `my-templates`, the following could be run:
 
 ```shell
 create-embark-dapp my-dapp \
-                   --template-source 'ghuser/embark#new-feature'
+                   --template-source 'ghuser/embark#my-templates'
 ```
 
 The package will be fetched with `npm pack` and decompressed. The only expectation is that the extracted archive will have the following structure:
@@ -178,7 +178,7 @@ The package will be fetched with `npm pack` and decompressed. The only expectati
 
 The extracted `package.json` will be ignored, but it must be present and valid per npm's [description of a package](https://docs.npmjs.com/cli/install#description).
 
-When the `--template-source` flag is not supplied, it's equivalent to indicating `--template-source embark`.
+When the `--template-source` flag is not used, it's equivalent to indicating `--template-source embark`.
 
 The `--template-source` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags.
 
@@ -188,9 +188,9 @@ To override the version of Embark specified as a dependency in a template's `pac
 
 ```shell
 create-embark-dapp my-dapp \
-                   --template showcase-xyz \
+                   --template showcase-feature \
                    --template-source 'embark-framework/embark#new-templates-wip'
-                   --embark-version 'ghuser/embark#fix-xyz'
+                   --embark-version 'ghuser/embark#fix-feature'
 ```
 
 **Note:** &nbsp; it is *incorrect* to use this flag without supplying a value.
