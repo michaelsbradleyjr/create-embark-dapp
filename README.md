@@ -184,7 +184,7 @@ The `--template-source` flag may be used with or without the `--template` flag, 
 
 ### `--embark-version`
 
-To override the version of Embark specified as a dependency in a template's `package.json`, indicate any npm [dependency value](https://docs.npmjs.com/files/package.json#dependencies) (version number or range, URL, path, etc.) that is valid relative to usage in `"dependencies": {"embark": "<value>"}`.
+To override the version of Embark specified as a dependency in a template's `package.json`, indicate any npm [dependency value](https://docs.npmjs.com/files/package.json#dependencies) (version number or range, URL, path, etc.) that will be valid relative to `"dependencies": {"embark": "<value>"}`.
 
 ```shell
 create-embark-dapp my-dapp \
