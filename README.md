@@ -158,43 +158,39 @@ When the `--template` flag is not supplied, and neither [`--demo`](#--demo) nor 
 
 ### `--template-source`
 
-To use a specific source for the template code, indicate a [tree-ish](https://git-scm.com/docs/gitglossary#gitglossary-aiddeftree-ishatree-ishalsotreeish) that's valid with respect to the [Embark repository](https://github.com/embark-framework/embark).
+To use a specific source for the template code, any npm [package specifier](https://docs.npmjs.com/cli/install#description) (URL, folder, gzipped tarball, etc.) may be supplied to the `--template-source` flag.
+
+So if a user `ghuser` has forked Embark and has a branch named `new-feature`, the following could be run:
 
 ```shell
 create-embark-dapp my-dapp \
-                   --template-source some-feature-branch
+                   --template-source 'ghuser/embark#new-feature'
 ```
 
-Alternatively, an `http/https` URL may be supplied which points to a `.tar.gz` asset. So if a user `ghuser` has forked Embark and has a branch named `new-feature`, the following could be run:
-
-```shell
-create-embark-dapp my-dapp \
-                   --template-source 'https://codeload.github.com/ghuser/embark/tar.gz/new-feature'
-```
-
-The only expectation is that the extracted files will have the following directory structure:
+The package will be fetched with `npm pack` and decompressed. The only expectation is that the extracted archive will have the following structure:
 
 ```
 .
+  package.json
   templates/
     <template-name>/
 ```
 
-When the `--template-source` flag is not used, templates will be extracted from the most recent version of the Embark package as can be determined with `npm show embark version`.
+The extracted `package.json` will be ignored, but it must be present and valid per npm's [description of a package](https://docs.npmjs.com/cli/install#description).
 
-**Note:** &nbsp; it is *incorrect* to use this flag without supplying a value.
+When the `--template-source` flag is not supplied, it's equivalent to indicating `--template-source embark`.
 
 The `--template-source` flag may be used with or without the `--template` flag, and may be used in conjunction with other flags.
 
 ### `--embark-version`
 
-To override the version of Embark specified as a dependency in a template's `package.json`, indicate any valid [dependency value](https://docs.npmjs.com/files/package.json#dependencies) (version number or range, URL, path, etc.).
+To override the version of Embark specified as a dependency in a template's `package.json`, indicate any npm [dependency value](https://docs.npmjs.com/files/package.json#dependencies) (version number or range, URL, path, etc.) that is valid relative to usage in `"dependencies": {"embark": "<value>"}`.
 
 ```shell
 create-embark-dapp my-dapp \
                    --template showcase-xyz \
-                   --template-source new-templates-wip
-                   --embark-version 3.1.4
+                   --template-source 'embark-framework/embark#new-templates-wip'
+                   --embark-version 'ghuser/embark#fix-xyz'
 ```
 
 **Note:** &nbsp; it is *incorrect* to use this flag without supplying a value.
