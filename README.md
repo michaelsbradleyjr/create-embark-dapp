@@ -7,6 +7,8 @@ The easiest way to create Ethereum [DApps](https://en.wikipedia.org/wiki/Decentr
 
 If you run into any issues or have feedback, please [file an issue](https://github.com/michaelsbradleyjr/create-embark-dapp/issues/new).
 
+Updating this, experimenting with magithub and PR reviews, comments, etc.
+
 ## Overview
 
 ```shell
